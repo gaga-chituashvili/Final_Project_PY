@@ -1,13 +1,17 @@
-
+{%load static tailwind_tags %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=viewport, initial-scale=1.0" />
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/dist/tailwind.min.css" rel="stylesheet">
+    {%tailwind_css%}
   </head>
   <body>
-   {% include "component/nav.html" %}
+    <header class="w-ful bg-slate-500 py-[30px]">
+      {% include "component/nav.html" %}
+    </header>
    {% block content %}
    {% endblock %}
   </body>

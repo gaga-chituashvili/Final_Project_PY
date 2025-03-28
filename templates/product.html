@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+ {% block content %}
+ <section class="flex flex-col gap-y-[30px]">
+   <h2 class="text-[30px] font-bold ml-[20px]">product paged</h2>
+<section class="flex flex-wrap justify-center gap-[30px]">
+    {% for product  in products %}
+   <a href="/details/{{ product.pk }}/" class="w-[350px] flex flex-col gap-y-[20px] border border-solid border-black p-[30px] rounded-xl">
+      <img class="w-full h-[300px] object-cover" src={{product.thumbnil.url}}/>
+    <p>{{product.name}}</p>
+    <p>{{product.price}} GEL</p>
+   </a>
+{% endfor %}  
+</section>
+ </section>
+{% endblock%}
+

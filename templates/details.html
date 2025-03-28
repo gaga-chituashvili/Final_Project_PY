@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+  <!-- Product Container -->
+  <section class="flex flex-wrap justify-center gap-8">
+    <section class="w-80 flex flex-col gap-y-5 border border-gray-300 p-6 rounded-xl shadow-lg">
+      <!-- Product Image -->
+      <img class="w-full h-72 object-cover rounded-lg" src="{{ product.thumbnil.url }}" alt="{{ product.name }}" />
+
+      <!-- Product Details -->
+      <p class="text-xl font-semibold">{{ product.name }}</p>
+      <p class="text-2xl text-green-600 font-bold">${{ product.price }}</p>
+      <p class="text-gray-600">{{ product.descriptions }}</p>
+
+      <!-- Add to Cart Button -->
+      <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+        Add to Cart
+      </button>
+    </section>
+  </section>
+{% endblock %}

@@ -18,15 +18,15 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
-from myapp.views import  home_view ,about_view,thirds_view
+from myapp.views import  home_view , product_view,details_view
 
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("",home_view),
-    path("about/",about_view),
-    path("thirds/",thirds_view),
-    path("_reload_/",include("django_browser_reload.urls"))
+    path("products/",product_view),
+    path("details/<int:pk>/", details_view),
+    path("_reload_/",include("django_browser_reload.urls")),
 ]
 
 
