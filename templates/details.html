@@ -1,20 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
-  <!-- Product Container -->
-  <section class="flex flex-wrap justify-center gap-8">
-    <section class="w-80 flex flex-col gap-y-5 border border-gray-300 p-6 rounded-xl shadow-lg">
-      <!-- Product Image -->
-      <img class="w-full h-72 object-cover rounded-lg" src="{{ product.thumbnil.url }}" alt="{{ product.name }}" />
-
-      <!-- Product Details -->
+  <section class="flex  justify-center items-center gap-8 p-[100px]">
+    <section class="flex  gap-x-[50px] border border-gray-300 p-10 rounded-xl shadow-lg ">
+       <article class="flex flex-col gap-y-[30px]">
+        <img class="w-full h-[800px]  object-cover rounded-lg" src="{{ product.thumbnil.url }}" alt="{{ product.name }}" />
       <p class="text-xl font-semibold">{{ product.name }}</p>
-      <p class="text-2xl text-green-600 font-bold">${{ product.price }}</p>
+       </article>
+      <article  class="flex flex-col gap-y-[40px]">
+        <p class="text-2xl text-green-600 font-bold">${{ product.price }}</p>
       <p class="text-gray-600">{{ product.descriptions }}</p>
-
-      <!-- Add to Cart Button -->
-      <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+      <button class="bg-green-300 w-[200px] text-white px-4 py-2 rounded hover:bg-green-600 transition">
         Add to Cart
       </button>
+      </article>
     </section>
   </section>
 {% endblock %}
