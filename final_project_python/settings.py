@@ -126,7 +126,9 @@ USE_I18N = True
 
 USE_TZ = True
 
+API_URL = "https://your-django-backend.onrender.com/api/"
 
+ALLOWED_HOSTS = ["restaurant.onrender.com"]
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
@@ -135,6 +137,8 @@ STATIC_URL = 'static/'
 MEDIA_URL = "/media/"
 
 MEDIA_ROOT = BASE_DIR / "media"
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 
 
