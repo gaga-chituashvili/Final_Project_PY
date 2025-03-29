@@ -8,6 +8,7 @@
        </article>
       <article  class="flex flex-col gap-y-[40px]">
         <p class="text-2xl text-green-600 font-bold">${{ product.price }}</p>
+      <span>{{ product.rating }}{% if product.review_set.count %} ({{ product.review_set.count }}){% endif %}</span>
       <p class="text-gray-600">{{ product.descriptions }}</p>
       <button class="bg-green-300 w-[200px] text-white px-4 py-2 rounded hover:bg-green-600 transition">
         Add to Cart
