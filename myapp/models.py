@@ -14,6 +14,14 @@ class Product(models.Model):
             return sum([review.rating for review in reviews]) / len(reviews)
         return ""
     
+    def get_stars(self):
+         rating = self.rating() 
+    
+         if not rating: 
+            return ""
+
+         return ' <i class="fa-solid fa-star font-red"></i>' * int(self.rating()) + '<i class="fa-solid fa-star-half"></i>' *  (self.rating() % 1 > 0 ) + '<i class="fa-regular fa-star"></i>' * (4 - int(self.rating()))
+
 
 
 class Review(models.Model):
