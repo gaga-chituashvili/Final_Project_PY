@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
+from users.models import User
 
 class Product(models.Model):
     thumbnil = models.ImageField(upload_to="final_project_python/", blank=True, null=True)
@@ -25,7 +26,7 @@ class Product(models.Model):
 
 
 class Review(models.Model):
-    user = models.ForeignKey("auth.User",on_delete=models.CASCADE)
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
     product = models.ForeignKey(Product,on_delete=models.CASCADE)
     rating = models.DecimalField(
         max_digits=3,  
