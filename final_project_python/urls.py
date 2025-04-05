@@ -16,9 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from django.conf import settings
 from django.conf.urls.static import static
-from myapp.views import  home_view , product_view,details_view,ProductListenView,generate_random_product_view
+from django.conf import settings
+from myapp.views import  home_view , product_view,details_view
 
 
 urlpatterns = [
@@ -28,9 +28,8 @@ urlpatterns = [
     path("details/<int:pk>/", details_view),
     path("_reload_/",include("django_browser_reload.urls")),
     path("", include("users.url")),
-    path("product/generate",generate_random_product_view,name="generate_random_product"),
-    
 ]
+
 
 
 

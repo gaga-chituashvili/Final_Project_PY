@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+Sign Up
+{% endblock %}
+
+{% block content %}
+<section class="flex justify-center mt-[200px]">
+    <form class="border p-2 rounded shadow bg-dark flex flex-col gap-y-[20px]" method="POST">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-group">
+                {{ field }}
+            </div>
+        {% endfor %}
+        <div class="flex flex-col gap-y-[20px]">
+            <button type="submit" data-mdb-button-init data-mdb-ripple-init class="w-full border rounded shadow hover:bg-red-200">Sign up</button>
+            <p>Already a member? <a href="{% url 'users:login' %}">Login</a></p>
+        </div>
+    </form>
+</section>
+{% endblock %}

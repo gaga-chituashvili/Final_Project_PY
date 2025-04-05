@@ -34,3 +34,4 @@ class Review(models.Model):
         validators=[MinValueValidator(0), MaxValueValidator(5)]
     )
     comment = models.TextField(blank=True,null=True)
+
