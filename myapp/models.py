@@ -35,3 +35,7 @@ class Review(models.Model):
     )
     comment = models.TextField(blank=True,null=True)
 
+
+
+    
+

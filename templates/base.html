@@ -13,15 +13,14 @@
     {% tailwind_css %}
   </head>
   <body>
-    <header class="w-full flex justify-between items-center px-[30px] py-[30px] bg-slate-500">
-      <img class="w-[70px]" src="{% static 'images/restaurant.svg' %}" alt="Logo" />
+    <header class="w-full flex justify-between items-center px-[30px] py-[30px] bg-slate-500 rounded-2xl">
+      <a href="/"><img class="w-[70px]" src="{% static 'images/restaurant.svg' %}" alt="Logo" /></a>
       {% include "component/nav.html" %}
       {% include "component/log.html" %}
     </header>
   
     {% block content %}
     {% endblock %}
-
-    <script type="module" src="../script.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
   </body>
 </html>

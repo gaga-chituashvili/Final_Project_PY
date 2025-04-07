@@ -28,6 +28,7 @@ urlpatterns = [
     path("details/<int:pk>/", details_view),
     path("_reload_/",include("django_browser_reload.urls")),
     path("", include("users.url")),
+    
 ]
 
 

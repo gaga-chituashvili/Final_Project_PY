@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 {% block title %}
+{% load static %}
 Login
 {% endblock  %}
  {% block content %}
- <section class="flex justify-center mt-[200px]">
+ <section class="flex justify-center  w-full h-full py-[200px]" style="background-image: url('{% static 'images/bgimg.png' %}'); background-repeat: no-repeat; background-size: cover; background-position: left">
     <form class="border p-2 rounded shadow bg-dark flex flex-col gap-y-[20px]" method="POST">
         {% csrf_token %}
         {% for field in form %}
@@ -17,3 +18,4 @@ Login
       </form>
  </section>
 {% endblock%}
+
