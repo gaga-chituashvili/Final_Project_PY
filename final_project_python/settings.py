@@ -24,10 +24,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-#&5k+-kdb!cc=00!g!^-l@n90o$q^)jsql*m@mu2ma&&^j!w#*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-ALLOWED_HOSTS = ['restaurant.com']
-
-SECRET_KEY = os.environ.get('SECRET_KEY', 'your-fallback-dev-secret')
+DEBUG = True
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -158,5 +156,3 @@ AUTH_USER_MODEL = "users.User"
 LOGIN_URL = "users:login"
 
 LOGIN_REDIRECT_URL = '/products'
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
