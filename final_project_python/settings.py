@@ -24,9 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-#&5k+-kdb!cc=00!g!^-l@n90o$q^)jsql*m@mu2ma&&^j!w#*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
+ALLOWED_HOSTS = ['*']  # or use the domain Railway gives you
 
-ALLOWED_HOSTS = []
+SECRET_KEY = os.environ.get('SECRET_KEY', 'your-fallback-dev-secret')
 
 
 # Application definition
@@ -158,3 +159,4 @@ LOGIN_URL = "users:login"
 
 LOGIN_REDIRECT_URL = '/products'
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
