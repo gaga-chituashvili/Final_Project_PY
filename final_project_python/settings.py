@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-#&5k+-kdb!cc=00!g!^-l@n90o$q^)jsql*m@mu2ma&&^j!w#*
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-ALLOWED_HOSTS = ['*']  # or use the domain Railway gives you
+ALLOWED_HOSTS = ['restaurant.com']
 
 SECRET_KEY = os.environ.get('SECRET_KEY', 'your-fallback-dev-secret')
 
