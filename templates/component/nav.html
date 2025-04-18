@@ -1,7 +1,21 @@
 <nav>
+  {% if user.is_authenticated %}
   <ul class="flex justify-center gap-x-[70px]">
-    <li class="text-[30px]"><a href="/"> home </a></li>
-    <li class="text-[30px]"><a href="/products/"> product </a></li>
-    <!-- <li class="text-[30px]"><a href="/details/{product.pk}"> details </a></li> -->
+    <li class="text-[30px] hover:text-slate-100 transition-all hover:underline">
+      <a href="/">Home</a>
+    </li>
+    <li class="text-[30px] hover:text-slate-100 transition-all hover:underline">
+      <a href="/products/">Product</a>
+    </li>
   </ul>
+  {% else %}
+  <ul class="flex justify-center gap-x-[70px]">
+    <li class="text-[30px] hover:text-slate-100 transition-all hover:underline">
+      <a href="/users/login/">Login</a>
+    </li>
+    <li class="text-[30px] hover:text-slate-100 transition-all hover:underline">
+      <a href="/users/register/">Register</a>
+    </li>
+  </ul>
+  {% endif %}
 </nav>

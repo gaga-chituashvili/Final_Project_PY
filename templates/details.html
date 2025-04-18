@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-  <section class="flex  justify-center items-center gap-8 p-[100px]">
+  <section class="flex flex-col gap-8 p-[100px]">
     <section class="flex  gap-x-[50px] border border-gray-300 p-10 rounded-xl shadow-lg ">
        <article class="flex flex-col gap-y-[30px]">
         <img class="w-full h-[800px]  object-cover rounded-lg" src="{{ product.thumbnil.url }}" alt="{{ product.name }}" />
@@ -8,11 +8,23 @@
        </article>
       <article  class="flex flex-col gap-y-[40px]">
         <p class="text-2xl text-green-600 font-bold">${{ product.price }}</p>
+      <span>{{ product.rating }}{% if product.review_set.count %} review ({{ product.review_set.count }}){% endif %}</span>
+      <article class="flex gap-x-[5px]">
+        <span>{{product.get_stars|safe }}</span>
+      </article>
       <p class="text-gray-600">{{ product.descriptions }}</p>
-      <button class="bg-green-300 w-[200px] text-white px-4 py-2 rounded hover:bg-green-600 transition">
-        Add to Cart
-      </button>
       </article>
     </section>
+    {% if review %}
+  <article class="bg-gray-100 p-4 rounded-lg shadow-md space-y-4">
+    {% for r in review %}
+      <div class="bg-white p-3 rounded-lg shadow-sm border-l-4 border-red-200">
+        <span class="text-gray-800 text-sm">{{ r.comment }}</span>
+      </div>
+    {% endfor %}
+  </article>
+{% else %}
+  <p class="text-gray-500 text-center">No comments</p>
+{% endif %}
   </section>
 {% endblock %}
