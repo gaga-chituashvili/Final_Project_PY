@@ -1,6 +1,6 @@
 {
     "builds":[{
-        "src": "final_project_python/wsgi.py",
+        "src": "index.js",
         "use":"@vercel/python",
         "config":{"maxLambdaSize":"15mb","runtime":"python3.9"}
     }],
