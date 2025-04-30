@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-#&5k+-kdb!cc=00!g!^-l@n90o$q^)jsql*m@mu2ma&&^j!w#*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG', 'False') == 'True'
+DEBUG = False
 
-ALLOWED_HOSTS = ['Restaurant.onrender.com']
+ALLOWED_HOSTS = ['*']
 
 DATABASE_URL = os.getenv("DATABASE_URL")
 
@@ -63,7 +63,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'final_project_python.urls'
@@ -139,7 +138,7 @@ STATICFILES_DIRS = [
    os.path.join(BASE_DIR,'static')
 ]
 STATICFILES_DIRS = [
-    BASE_DIR / "static",  # or any other folder for static files
+    BASE_DIR / "static",  
 ]
 STATIC_ROOT = BASE_DIR / "staticfiles" 
 
@@ -147,12 +146,6 @@ MEDIA_URL = "media/"
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
-import dj_database_url
-
-
-DATABASES = {
-    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
-}
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
