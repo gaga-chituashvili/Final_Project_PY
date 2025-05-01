@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 import os
 
+from django.core.wsgi import get_wsgi_application
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -156,3 +159,7 @@ AUTH_USER_MODEL = "users.User"
 LOGIN_URL = "users:login"
 
 LOGIN_REDIRECT_URL = '/products'
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'final_project_python.settings')
+
+application = get_wsgi_application()
