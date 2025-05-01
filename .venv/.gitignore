@@ -1,0 +1,19 @@
+# Created by venv; see https://docs.python.org/3/library/venv.html
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.db
+
+# Virtual Envs
+venv/
+.venv/
+
+# Media/static files (optional)
+media/
+staticfiles/
+*.log
+
+# IDE config files
+.vscode/
+.idea/
