@@ -27,9 +27,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-#&5k+-kdb!cc=00!g!^-l@n90o$q^)jsql*m@mu2ma&&^j!w#*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['gaga1919.pythonanywhere.com']
+ALLOWED_HOSTS = []
 
 DATABASE_URL = os.getenv("DATABASE_URL")
 
@@ -159,7 +159,3 @@ AUTH_USER_MODEL = "users.User"
 LOGIN_URL = "users:login"
 
 LOGIN_REDIRECT_URL = '/products'
-
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'final_project_python.settings')
-
-application = get_wsgi_application()
