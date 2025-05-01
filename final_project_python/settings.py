@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-#&5k+-kdb!cc=00!g!^-l@n90o$q^)jsql*m@mu2ma&&^j!w#*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['restaurant.pythonanywhere.com']
 
 DATABASE_URL = os.getenv("DATABASE_URL")
 
