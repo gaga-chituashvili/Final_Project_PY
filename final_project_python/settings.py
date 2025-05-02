@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
-import os
+
 
 from django.core.wsgi import get_wsgi_application
 
@@ -29,9 +29,8 @@ SECRET_KEY = 'django-insecure-#&5k+-kdb!cc=00!g!^-l@n90o$q^)jsql*m@mu2ma&&^j!w#*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
-DATABASE_URL = os.getenv("DATABASE_URL")
 
 # Application definition
 
@@ -136,10 +135,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = [BASE_DIR, 'static']
 
 STATICFILES_DIRS = [
-   os.path.join(BASE_DIR,'static')
+   BASE_DIR / 'static'
 ]
 STATICFILES_DIRS = [
     BASE_DIR / "static",  
@@ -148,7 +147,7 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 
 MEDIA_URL = "media/"
 
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_ROOT = [BASE_DIR,'media']
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
