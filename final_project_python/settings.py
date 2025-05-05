@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-#&5k+-kdb!cc=00!g!^-l@n90o$q^)jsql*m@mu2ma&&^j!w#*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['georgianrestaurant-4qvo6.ondigitalocean.app']
 
 
 # Application definition
