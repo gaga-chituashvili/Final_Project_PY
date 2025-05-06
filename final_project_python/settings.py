@@ -140,7 +140,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'static'),  
 ]
 MEDIA_URL = 'https://georgian-restaurant-media.fra1.digitaloceanspaces.com/'
 
@@ -159,8 +159,8 @@ LOGIN_REDIRECT_URL = '/products'
 
 
 INSTALLED_APPS += ['storages']
-
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 AWS_ACCESS_KEY_ID = 'DO00LBQM4FVN2HJBXRRE' 
@@ -169,3 +169,4 @@ AWS_STORAGE_BUCKET_NAME = 'georgian-restaurant-media'
 AWS_S3_ENDPOINT_URL = 'https://fra1.digitaloceanspaces.com'  
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
+
