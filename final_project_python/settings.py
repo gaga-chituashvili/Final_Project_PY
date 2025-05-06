@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-#&5k+-kdb!cc=00!g!^-l@n90o$q^)jsql*m@mu2ma&&^j!w#*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['georgianrestaurant-diiwi.ondigitalocean.app']
+ALLOWED_HOSTS = ['https://georgianrestaurant-5wjf7.ondigitalocean.app']
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Application definition
