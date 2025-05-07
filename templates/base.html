@@ -13,9 +13,9 @@
   </head>
   <body>
     <header class="w-full flex justify-between items-center px-8 py-6 bg-slate-600 rounded-2xl shadow-md fixed z-20 top-0 left-50%">
-      <a href="/">
+      {% comment %} <a href="/">
         <img class="w-[70px] h-[70px] hover:scale-105 transition-transform duration-300" src="{% static 'images/restaurant.svg' %}" alt="Logo" />
-      </a>
+      </a> {% endcomment %}
       {% include "component/nav.html" %}
       {% include "component/log.html" %}
     </header>
