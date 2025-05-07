@@ -7,4 +7,4 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-CMD gunicorn yourproject.wsgi:application --bind 0.0.0.0:$PORT
+CMD gunicorn final_project_python.wsgi:application --bind 0.0.0.0:$PORT
