@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-#&5k+-kdb!cc=00!g!^-l@n90o$q^)jsql*m@mu2ma&&^j!w#*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -157,3 +157,10 @@ LOGIN_URL = "users:login"
 
 LOGIN_REDIRECT_URL = '/products'
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://your-railway-domain.up.railway.app',
+    'https://*.up.railway.app'
+]
+
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
