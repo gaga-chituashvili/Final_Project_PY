@@ -158,7 +158,7 @@ LOGIN_URL = "users:login"
 LOGIN_REDIRECT_URL = '/products'
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://final_project_python.up.railway.app',
+    'https://finalprojectpy-production.up.railway.app',
     'https://*.up.railway.app'
 ]
 
