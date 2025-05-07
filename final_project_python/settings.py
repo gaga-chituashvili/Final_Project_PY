@@ -158,10 +158,9 @@ LOGIN_URL = "users:login"
 LOGIN_REDIRECT_URL = '/products'
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://your-railway-domain.up.railway.app',
+    'https://final_project_python.up.railway.app',
     'https://*.up.railway.app'
 ]
-
 
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
