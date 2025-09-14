@@ -28,12 +28,27 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-#&5k+-kdb!cc=00!g!^-l@n90o$q^)jsql*m@mu2ma&&^j!w#*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    "127.0.0.1",
+    "localhost",
+    "breneo.onrender.com",
+    "www.breneo.onrender.com",
+]
+
+STATIC_URL = "/static/"
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Application definition
+
+if DEBUG:
+    STATICFILES_DIRS = [BASE_DIR / "static"]
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -156,4 +171,9 @@ AUTH_USER_MODEL = "users.User"
 LOGIN_URL = "users:login"
 
 LOGIN_REDIRECT_URL = '/products'
+
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://breneo.onrender.com",
+]
 
