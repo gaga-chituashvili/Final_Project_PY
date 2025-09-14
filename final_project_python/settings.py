@@ -33,8 +33,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
-    "breneo.onrender.com",
-    "www.breneo.onrender.com",
+    "georgianrestaurant.onrender.com",
+    "www.georgianrestaurant.onrender.com",
 ]
 
 STATIC_URL = "/static/"
@@ -46,8 +46,8 @@ MEDIA_ROOT = BASE_DIR / "media"
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Application definition
 
-if DEBUG:
-    STATICFILES_DIRS = [BASE_DIR / "static"]
+
+STATICFILES_DIRS = [BASE_DIR / "static"]
 
 
 INSTALLED_APPS = [
