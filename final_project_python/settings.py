@@ -37,11 +37,12 @@ ALLOWED_HOSTS = [
     "www.georgianrestaurant.onrender.com",
 ]
 
-STATIC_URL = "/static/"
-STATIC_ROOT = BASE_DIR / "staticfiles"
 
-MEDIA_URL = "/media/"
-MEDIA_ROOT = BASE_DIR / "media"
+MEDIA_URL = '/media/'
+MEDIA_ROOT = '/media'
+
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Application definition
@@ -63,6 +64,7 @@ INSTALLED_APPS = [
     'theme',  
     'django_browser_reload', 
     'final_project_python',
+    "corsheaders",
 ]
 
 
@@ -74,7 +76,9 @@ INTERNAL_IPS = [
 
 
 MIDDLEWARE = [
+     "corsheaders.middleware.CorsMiddleware",
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
      "django_browser_reload.middleware.BrowserReloadMiddleware",
@@ -83,6 +87,19 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware', 
      'whitenoise.middleware.WhiteNoiseMiddleware',
+]
+
+
+
+WHITENOISE_USE_FINDERS = True
+
+CORS_ALLOW_ALL_ORIGINS = True
+
+
+
+CORS_ALLOWED_ORIGINS = [
+    "https://yourfrontend.com",
+    "http://localhost:3000",
 ]
 
 ROOT_URLCONF = 'final_project_python.urls'
@@ -176,4 +193,6 @@ LOGIN_REDIRECT_URL = '/products'
 CSRF_TRUSTED_ORIGINS = [
     "https://breneo.onrender.com",
 ]
+
+
 
