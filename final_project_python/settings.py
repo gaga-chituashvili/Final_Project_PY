@@ -15,7 +15,8 @@ import os
 
 
 from django.core.wsgi import get_wsgi_application
-
+from dotenv import load_dotenv
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -45,7 +46,6 @@ STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-# Application definition
 
 if DEBUG:
     STATICFILES_DIRS = [BASE_DIR / "static"]
@@ -65,6 +65,8 @@ INSTALLED_APPS = [
     'django_browser_reload', 
     'final_project_python',
     "corsheaders",
+    'cloudinary',
+    'cloudinary_storage',
 ]
 
 
@@ -88,6 +90,15 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware', 
      'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
+
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': os.getenv('CLOUDINARY_API_KEY'),
+    'API_SECRET': os.getenv('CLOUDINARY_API_SECRET'),
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 
